@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Results_Correct</title>
+</head>
+<body>
+    <div class="containerTitle">
+        <h1 class="title">Welcome to the Great Number Game!</h1>
+    </div>
+    <div class="containerInstructions">
+        <h2 class="instructions">I am thinking of a number between 1 and 100. Take a guess!</h2>
+    </div>
+    <div class="correct">
+        <p>Correct!</p>
+    </div>
+    <div class="containerForm">
+        <form action= "/process" method="post">
+            <div class="inputContainer">
+                <label for="user_guess"></label>
+                <input class="textBox", type="text", name="user_guess", id="user_guess", placeholder="enter a number 1-100">
+                <div>
+                    <button class="submitButton" type="submit" >Submit</button>
+                    <button class="resetButton" type="submit" formaction="{{ url_for('destroy_session') }}">RESET</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
